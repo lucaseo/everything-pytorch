@@ -170,3 +170,6 @@ dmypy.json
 
 # Jetbrains
 .idea/
+
+# reference course materials
+*.pdf
