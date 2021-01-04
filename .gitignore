@@ -173,3 +173,5 @@ dmypy.json
 
 # reference course materials
 *.pdf
+
+**/course-materials
