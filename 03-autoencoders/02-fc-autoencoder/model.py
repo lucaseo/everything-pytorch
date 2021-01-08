@@ -1,10 +1,10 @@
+import torch
 import torch.nn as nn
-
 
 
 class Autoencoder(nn.Module):
 
-    def __int__(self, bottleneck_size=2):
+    def __init__(self, bottleneck_size=2):
         self.bottleneck_size = bottleneck_size
 
         super().__init__()
@@ -56,5 +56,6 @@ class Autoencoder(nn.Module):
     def forward(self, x):    ## |x| = (batch_size, 784)
         z = self.encoder(x)  ## |z| = (batch_size, btl_size)
         y = self.decoder(z)  ## |y| = |x|
-        
+
         return y
+

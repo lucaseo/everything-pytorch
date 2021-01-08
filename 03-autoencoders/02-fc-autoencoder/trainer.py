@@ -74,7 +74,7 @@ class Trainer():
         lowest_loss = np.inf
         best_model = None
 
-        for epoch_index in range(config.n_epochs):
+        for epoch_index in range(config.num_epochs):
             train_loss = self._train(train_data[0], train_data[1], config)
             valid_loss = self._train(train_data[0], train_data[1], config)
 
@@ -84,10 +84,10 @@ class Trainer():
 
             print("Epoch({0}/{1}): train_loss={2}  valid_loss={3}  lowest_loss={4}".format(
                 epoch_index + 1,
-                config.n_pochs,
-                train_loss,
-                valid_loss,
-                lowest_loss
+                config.num_epochs,
+                round(train_loss, 4),
+                round(valid_loss, 4),
+                round(lowest_loss, 4)
             ))
 
         self.model.load_state_dict(best_model)

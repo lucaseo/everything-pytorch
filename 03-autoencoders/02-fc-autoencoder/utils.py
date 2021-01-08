@@ -2,7 +2,7 @@ from torchvision import datasets, transforms
 
 def load_mnist(is_train=True, flatten=True):
 
-    datasets = datasets.MNIST(
+    dataset = datasets.MNIST(
         "../data",
         train = is_train,
         download = True,
@@ -11,8 +11,8 @@ def load_mnist(is_train=True, flatten=True):
         ]),
     )
 
-    x = datasets.data.float() / 255.
-    y = datasets.targets
+    x = dataset.data.float() / 255.
+    y = dataset.targets
 
     if flatten:
         x = x.view(x.size(0), -1)
